@@ -1,4 +1,7 @@
 const fs = require("fs");
+const os = require("os");
+
+console.log(os.cpus().length);
 
 // fs.writeFileSync('./test.txt',"this is a synchronous file");
 
@@ -16,4 +19,4 @@ const fs = require("fs");
 //     console.log(results);
 // })
 
-fs.appendFileSync('./test.txt', `\n hey there ${Date.now()}`)
+// fs.appendFileSync('./test.txt', `\n hey there ${Date.now()}`)
