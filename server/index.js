@@ -1,22 +1,18 @@
     const http = require("http");
+    const express = require('express')
 
-    const myServer = http.createServer( (req, res) => {
-        // console.log(req.headers);
+    const app = express();
 
-        switch(req.url){
-            case '/' :
-                 res.end("homepage");
-            break;
-            case "/about":
-                 res.end("i am shivam purohit");
-            break;
-            default:
-                res.end("404 not found");
-        }
-    
-
-
+    app.get('/', (req, res)=>{
+            res.send('hello ' + req.query.name)
     })
- const PORT = 8000;
-    myServer.listen(PORT, ()=> console.log(`server is started at port ${PORT}`))
+
+    app.get('/about', (req, res)=>{
+        res.send("hello from express about page")
+    })
+
+
+    app.listen(8000, ()=>{
+        console.log("listening at port "+8000);
+    })
 
