@@ -15,6 +15,9 @@ connectDB('mongodb://127.0.0.1:27017/project1').then(()=>console.log("mongodb co
 //Routes
 // app.use(logReqRes('log.txt'))
 app.use('/user', userRouter);
+app.use('/test', (req, res)=>{
+    res.end("<h1>welcome </h1>")
+})
 
 app.listen(PORT, ()=>{
     console.log(`listening at PORT ${PORT}`);
